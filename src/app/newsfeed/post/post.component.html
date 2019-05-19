@@ -1,0 +1,26 @@
+<h3>Angular7 Image Preview before Upload:</h3><br/><br/>
+
+<div ng-repeat="file in imagefinaldata" class="img_wrp">
+    <img *ngIf="url" [src]="url" class="imgResponsiveMax" alt="" />
+    <button type="button" class="close Close" aria-label="Close" (click)="onClickMe()" *ngIf="url">
+        <span aria-hidden="true">&times;</span>
+      </button>
+  </div>
+  <input type='file' (change)="onSelectFile($event)">
+ 
+ 
+  <button type="button" class="primary-btn" [disabled]="upload" (click)="onUpload()"  >upload</button>
+ 
+ 
+  <textarea 
+   id="descriptionEducation" 
+   name="description" 
+   rows="5" 
+   required maxlength="144" 
+   [(ngModel)]="description"
+   class="form-control" 
+   aria-label="With textarea"></textarea>
+
+<div class="form-row__description">
+ {{ description.length }} / 144
+</div>
