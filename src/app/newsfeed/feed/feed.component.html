@@ -1,8 +1,12 @@
-<div class="card w-50">
-  <div class="card-body">
+<div class="card w-50" *ngIf="feeds" >
+  <div class="card-body" *ngFor="let feed of feeds.feeds">
     <h5 class="card-title">{{ profileName }}</h5>
-    <p class="card-text">{{ description }} </p>
-    <a href="#" class="btn btn-primary">Button</a>
+    <p class="card-text">{{ feed.description }}  </p>
+    <img [src]="url + feed.image_name" class="card-img-top" alt="...">
+    <a href="#" class="btn btn-primary">like</a>
+    <a href="#" class="btn btn-danger">Comment</a>
+
   </div>
 </div>
+
 
