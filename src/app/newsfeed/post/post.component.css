@@ -1,9 +1,43 @@
 .img_wrp {
     display: inline-block;
     position: relative;
+  
   }
   .Close {
     position: absolute;
     top: 0;
     right: 0;
   }
+  .aws{
+    position: relative;
+  overflow: hidden;
+  }
+  input {
+    position: absolute;
+    font-size: 50px;
+    opacity: 0;
+    right: 0;
+    top: 0;
+  }
+  .button{
+    display: inline;
+  }
+  .btn{
+    border-radius: 15px;
+  }
+  .cont{
+    width: 50%;
+    margin-left: 25%;
+    background-color: silver;
+    padding: 1%;
+    border-radius: 8px;
+  }
+  .cont-1{
+    width: 50%;
+    margin-left: 25%;
+
+    padding: 1%;
+    border-radius: 8px;
+  }
+
+  
