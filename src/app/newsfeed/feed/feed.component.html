@@ -1,12 +1,32 @@
-<div class="card w-50" *ngIf="feeds" >
-  <div class="card-body" *ngFor="let feed of feeds.feeds">
-    <h5 class="card-title">{{ profileName }}</h5>
-    <p class="card-text">{{ feed.description }}  </p>
-    <img [src]="url + feed.image_name" class="card-img-top" alt="...">
-    <a href="#" class="btn btn-primary">like</a>
-    <a href="#" class="btn btn-danger">Comment</a>
+<div class="cont"*ngIf="feeds">
+ 
+      <div class="card-cont card text-white bg-primary " *ngFor="let feed of feeds" > 
+          <div class="card-header card-title" >
+              {{ profileName }} {{ displayDate(feed.created_on) }}
+            </div>
+          <div class="card-body"  >
+            <p class="card-text">{{ feed.description }}  </p>
+            <img [src]="url + feed.image_name" class="card-img-top" alt="...">
+            <br>
+            <br>
+            <button type="button" class="btn btn-primary"
+            (click)='updateLike(feed.id, feed)'
+            [style.background-color]="feed.is_active ? 'grey' : 'blue'"
+            >
+            <i class="fas fa-heart"></i>
+              
+            </button>
+            <span class="badge badge-light"> Like  {{ feed.like_count  }} </span>
+            <a href="#" class="btn btn-danger">Comment</a>
+          </div>
+      </div> 
 
-  </div>
+    <br>
+    <div>
+        <button class="btn btn-secondary" *ngFor='let num of page_num' (click)="navPaginate(num)"> {{ num }}</button>
+      </div>
 </div>
+
+
 
 
