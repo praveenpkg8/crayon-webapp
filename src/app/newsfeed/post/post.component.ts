@@ -18,7 +18,7 @@ export class PostComponent implements OnInit {
   description: string = '';
 
   constructor(private http: HttpClient){}
-
+// selecting image for preview
   onSelectFile(event) { // called each time file input changes
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
@@ -34,12 +34,12 @@ export class PostComponent implements OnInit {
   }
 
      onClickMe() {
-      this.url = null;
-      this.upload = true;
+      this.url = null; // hiding image preview
+      this.upload = true; // disable upload button again
 
     }
     
-
+    //upload file to datastore
     onUpload(){
       const fd = new FormData();
       fd.append('file', this.selectedFile)
