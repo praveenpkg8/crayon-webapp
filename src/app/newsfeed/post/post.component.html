@@ -1,26 +1,42 @@
-<h3>Angular7 Image Preview before Upload:</h3><br/><br/>
 
-<div ng-repeat="file in imagefinaldata" class="img_wrp">
-    <img *ngIf="url" [src]="url" class="imgResponsiveMax" alt="" />
-    <button type="button" class="close Close" aria-label="Close" (click)="onClickMe()" *ngIf="url">
-        <span aria-hidden="true">&times;</span>
-      </button>
-  </div>
-  <input type='file' (change)="onSelectFile($event)">
- 
- 
-  <button type="button" class="primary-btn" [disabled]="upload" (click)="onUpload()"  >upload</button>
- 
- 
-  <textarea 
-   id="descriptionEducation" 
-   name="description" 
-   rows="5" 
-   required maxlength="144" 
-   [(ngModel)]="description"
-   class="form-control" 
-   aria-label="With textarea"></textarea>
 
-<div class="form-row__description">
- {{ description.length }} / 144
+<div class="cont">
+        <div class="d-flex justify-content-between">
+                <div class="profile">
+                        <h5> Jon Snow</h5>
+                        <h6>King Beyond the wall</h6>
+                </div>
+                <div class="a">
+                        <div class="button">
+                                <div class="file aws btn btn-outline-secondary" (change)="onSelectFile($event)">
+                                    <i class="fas fa-plus-circle"></i>Add
+                                    <input type="file" name="file"/>
+                                    </div>
+                                  <button type="button" class="btn btn-outline-secondary" [disabled]="upload" (click)="onUpload()"  > <i class="fas fa-upload"></i> upload</button>
+                             </div>
+                        </div>
+                </div>
 </div>
+<div class="cont-1"  *ngIf="url">
+                <div ng-repeat="file in imagefinaldata" class="img_wrp">
+                                <img [src]="url" class="imgResponsiveMax" style="height: 200px; width: 200px" alt="" />
+                                <button type="button" class="close Close" aria-label="Close" (click)="onClickMe()" *ngIf="url">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                              </div>
+</div>
+  <div class="cont">
+    <textarea 
+    id="descriptionEducation" 
+    name="description" 
+    rows="3" 
+    required maxlength="144" 
+    [(ngModel)]="description"
+    class="form-control" 
+    aria-label="With textarea"></textarea>
+    <div class="form-row__description">
+            {{ description.length }} / 144
+           </div>
+  </div>
+    
+  
